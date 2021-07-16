@@ -39,14 +39,9 @@ func sliceToListNode(nums []int) *ListNode {
 	//node3 := &ListNode{Val: 2}
 	//node2 := &ListNode{Val: 3, Next: node3}
 	//node1 := &ListNode{Val: 1, Next: node2}
-	var node, next *ListNode
+	var head *ListNode
 	for i := len(nums) - 1; i >= 0; i-- {
-		node = &ListNode{
-			Val:  nums[i],
-			Next: next,
-		}
-		next = node
+		head = &ListNode{Val: nums[i], Next: head}
 	}
-
-	return node
+	return head
 }
